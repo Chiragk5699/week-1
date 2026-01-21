@@ -23,4 +23,3 @@ else:
     print ("It is not a palidrome")
 
 
-
