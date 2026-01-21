@@ -1,5 +1,4 @@
-
-
+# Exercise 1 
 
 import numpy as np
 
@@ -23,3 +22,29 @@ else:
     print ("It is not a palidrome")
 
 
+# Exercise 2
+
+def parentheses_checker(s):
+    '''
+    Given a string, return True if the string is balanced
+    False Otherwise
+    '''
+
+    stack = []
+
+    opening = set('({[')
+    closing = set(')}]')
+
+    matches = {')': '(', '}': '{', ']': '['}
+
+    for char in s:
+        if char in opening:
+            stack.append(char)
+        elif char in closing:
+            if not stack or stack[-1] != matches[char]:
+                return False
+            stack.pop()
+
+    return not stack
+
+    
