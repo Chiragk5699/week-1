@@ -16,3 +16,11 @@ if palindrome(word):
     print("It's a palindrome!")
 else:
     print("Not a palindrome.")
+
+
+# Exercise 2
+import numpy as np
+
+
+def parentheses(sequence):
+    
