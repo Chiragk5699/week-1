@@ -1,5 +1,4 @@
 
-
 # Exercise 1
 import numpy as np
 
@@ -23,4 +22,16 @@ import numpy as np
 
 
 def parentheses(sequence):
+    count =0
     
+    for char in sequence:
+        if char == '(':
+            count += 1
+        elif char == ')':
+            count -= 1
+        
+        if count < 0:
+            return False
+        
+    return count == 0
+
