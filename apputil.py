@@ -10,16 +10,7 @@ def palindrome(s) :
     '''
 
     s = s.lower()
-
-
     return s == s[::-1]
-
-s = input ("Enter a word or Phrase")
-
-if palindrome(s):
-    print ("It is a palindrome")
-else:
-    print ("It is not a palidrome")
 
 
 # Exercise 2
