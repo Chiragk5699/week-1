@@ -1,32 +1,48 @@
-
 # Exercise 1
-import numpy as np
-
-
 def palindrome(word):
-    word = word.replace(" ", "").lower()
-    
-    #Check if the string is the same forwards and backwards
-    return word == word[::-1]
+    """
+    Check whether a given string is a palindrome.
 
+    Parameters
+    ----------
+    word : str
+        Input string to check.
 
+    Returns
+    -------
+    bool
+        True if the string is a palindrome, False otherwise.
+    """
+    cleaned_word = word.replace(" ", "").lower()
+    return cleaned_word == cleaned_word[::-1]
 
 
 # Exercise 2
-import numpy as np
-
-
 def parentheses(sequence):
-    count =0
-    
+    """
+    Check whether a string of parentheses is balanced.
+
+    Parameters
+    ----------
+    sequence : str
+        A string containing '(' and ')'.
+
+    Returns
+    -------
+    bool
+        True if parentheses are balanced, False otherwise.
+    """
+    count = 0
+
     for char in sequence:
-        if char == '(':
+        if char == "(":
             count += 1
-        elif char == ')':
+        elif char == ")":
             count -= 1
-        
+
+        # Early failure if closing parenthesis appears first
         if count < 0:
             return False
-        
+
     return count == 0
 
