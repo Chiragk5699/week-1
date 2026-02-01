@@ -3,14 +3,32 @@
 import numpy as np
 
 
-def palindrome(s) :
+def palindrome(s):
     '''
-    Given a word, return True if the word is a palindrome
-    Flase Otherwise
+    Given a word or phrase, return True if it is a palindrome.
+    False otherwise.
+    Ignores case, spaces, and punctuation.
     '''
-
+    
+    # Convert to lowercase
     s = s.lower()
-    return s == s[::-1]
+    
+    # Keep only alphanumeric characters (letters and numbers)
+    cleaned = ""
+    for char in s:
+        if char.isalnum():
+            cleaned += char
+    
+    # Check if cleaned string is a palindrome
+    return cleaned == cleaned[::-1]
+
+
+s = input("Enter a word or phrase: ")
+
+if palindrome(s):
+    print("It is a palindrome")
+else:
+    print("It is not a palindrome")
 
 
 # Exercise 2
